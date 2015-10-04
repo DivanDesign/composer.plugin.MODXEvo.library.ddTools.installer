@@ -10,7 +10,7 @@ class Installer extends LibraryInstaller {
 			$ddToolsOldVersionBackupFileName = "modx.ddtools.class_old.php",
 			$ddToolsPath = 'assets/libs/ddTools/',
 			$ddToolsDeprecatedPath = "assets/snippets/ddTools/",
-			$ddToolsPackageName = "dd/modxevo-ddtools",
+			$ddToolsPackageName = "dd/modxevo-library-ddtools",
 			$ddToolsType = "modxevo-library-ddtools";
 	
 	public function getPackageBasePath(PackageInterface $package){
