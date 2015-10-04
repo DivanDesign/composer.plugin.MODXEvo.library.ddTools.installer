@@ -1,0 +1,16 @@
+{
+  "name": "dd/composer-plugin-modxevo-library-ddtools-installer",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "MODXEvoDDToolsInstaller\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "MODXEvoDDToolsInstaller\\Plugin"
+  },
+  "require": {
+    "composer-plugin-api": "1.0.0"
+  }
+}
