@@ -59,7 +59,7 @@ class Installer extends LibraryInstaller {
 			//Override the old version with a reference to the version being installed
 			file_put_contents(
 				$this->ddToolsDeprecatedPath.$this->ddToolsClassFileName,
-				"<?php require_once('../../../".$this->ddToolsPath.$this->ddToolsClassFileName."'); ?>"
+				"<?php require_once('./".$this->ddToolsPath.$this->ddToolsClassFileName."'); ?>"
 			);
 		}
 	}
