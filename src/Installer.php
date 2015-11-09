@@ -47,9 +47,10 @@ class Installer extends LibraryInstaller {
 	 */
 	private function overrideOldVersionFile(){
 		$oldVersionFilePath = $this->ddToolsDeprecatedPath.$this->ddToolsClassFileName;
+		$oldVersionBackupPath = $this->ddToolsDeprecatedPath.$this->ddToolsOldVersionBackupFileName;
 		
-		//Check if an old version of the library is in assets/snippets
-		if(is_file($oldVersionFilePath)){
+		//Check if an old version of the library is in assets/snippets and its backup doesn't exist
+		if(is_file($oldVersionFilePath) && !is_file($oldVersionBackupPath)){
 			//Backup of the old version
 			file_put_contents(
 				$this->ddToolsDeprecatedPath.$this->ddToolsOldVersionBackupFileName,
@@ -59,7 +60,7 @@ class Installer extends LibraryInstaller {
 			//Override the old version with a reference to the version being installed
 			file_put_contents(
 				$this->ddToolsDeprecatedPath.$this->ddToolsClassFileName,
-				"<?php require_once('./".$this->ddToolsPath.$this->ddToolsClassFileName."'); ?>"
+				"<?php require_once(realpath(__DIR__.'/../../../".$this->ddToolsPath.$this->ddToolsClassFileName."')); ?>"
 			);
 		}
 	}
