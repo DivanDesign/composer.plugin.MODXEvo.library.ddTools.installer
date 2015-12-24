@@ -57,10 +57,10 @@ class Installer extends LibraryInstaller {
 				file_get_contents($oldVersionFilePath)
 			);
 			
-			//Override the old version with a reference to the version being installed
+			//Override the old version with a reference to composer autoload
 			file_put_contents(
 				$this->ddToolsDeprecatedPath.$this->ddToolsClassFileName,
-				"<?php require_once(realpath(__DIR__.'/../../../".$this->ddToolsPath.$this->ddToolsClassFileName."')); ?>"
+				"<?php require_once(realpath(__DIR__.'/../../../vendor/autoload.php')); ?>"
 			);
 		}
 	}
